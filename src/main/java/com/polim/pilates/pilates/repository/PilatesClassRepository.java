@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface PilatesClassRepository extends JpaRepository<PilatesClass, Long> {
-    List<PilatesClass> findByType(String type);
-    List<PilatesClass> findByEnrolledCountLessThan(int capacity);
+//    List<PilatesClass> findByType(String type);
+//    List<PilatesClass> findByEnrolledCountLessThan(int capacity);
 }
