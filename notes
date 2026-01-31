@@ -1,0 +1,7 @@
+@Qualifier
+--> given multiple classes implementing same interface. allows spring to pick which ones
+--> eg. constructor injection
+--> eg. private final Instructor instructor
+--> eg. public classScheduler(Qualifier('yogaInstructor') Instructor instructor) {
+-->     this.instructor = instructor;
+-->     {
