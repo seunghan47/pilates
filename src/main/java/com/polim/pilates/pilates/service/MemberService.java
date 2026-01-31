@@ -24,4 +24,14 @@ public class MemberService {
 
         return memberRepository.save(member);
     }
+
+    public void deleteMember(String email) {
+
+        Optional<Member> existingMember = memberRepository.findByEmail(email);
+        if (existingMember.isEmpty()) {
+            throw new IllegalStateException("member with " + email + " does not exist");
+        }
+
+        memberRepository.delete(existingMember.get());
+    }
 }
