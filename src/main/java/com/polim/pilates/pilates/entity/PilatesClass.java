@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Getter
 @Setter
@@ -18,5 +20,9 @@ public class PilatesClass {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    private String name; // e.g., "Advanced Reformer"
+    private String instructor;
+    private LocalDateTime startTime;
+    private Integer capacity;
 
 }
