@@ -4,4 +4,7 @@
 --> eg. private final Instructor instructor
 --> eg. public classScheduler(Qualifier('yogaInstructor') Instructor instructor) {
 -->     this.instructor = instructor;
--->     {
+-->     }
+
+@Primary
+--> Picks the implementation when you use this qualifer.
