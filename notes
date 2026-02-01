@@ -8,3 +8,7 @@
 
 @Primary
 --> Picks the implementation when you use this qualifer.
+
+@Lazy
+--> Only starts up beans/components when they're actually needed
+--> used to save time, data, optimization.
