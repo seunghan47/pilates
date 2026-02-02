@@ -17,12 +17,18 @@ import java.time.LocalDateTime;
 public class PilatesClass {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
+    @Column(nullable = false)
     private String name; // e.g., "Advanced Reformer"
+
+    @Column(nullable = false)
     private String instructor;
+
+    //yyyy-MM-dd'T'HH:mm:ss.sss
     private LocalDateTime startTime;
+
     private Integer capacity;
 
 }

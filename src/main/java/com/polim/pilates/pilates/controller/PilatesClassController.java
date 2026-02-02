@@ -2,14 +2,12 @@ package com.polim.pilates.pilates.controller;
 
 import com.polim.pilates.pilates.entity.PilatesClass;
 import com.polim.pilates.pilates.service.PilatesClassService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/classes")
+@RequestMapping("/class")
 public class PilatesClassController {
 
     private final PilatesClassService classService;
@@ -20,6 +18,16 @@ public class PilatesClassController {
 
     @GetMapping("/get")
     public List<PilatesClass> getAllClasses() {
-        return classService.findAllAvailableClasses();
+        return null;
+    }
+
+    ////yyyy-MM-dd'T'HH:mm:ss.sss
+    @PostMapping("/register")
+    public PilatesClass registerClass(@RequestBody PilatesClass pilatesClass) {
+            return classService.saveClass(
+                    pilatesClass.getInstructor(),
+                    pilatesClass.getStartTime(),
+                    pilatesClass.getCapacity(),
+                    pilatesClass.getName());
     }
 }

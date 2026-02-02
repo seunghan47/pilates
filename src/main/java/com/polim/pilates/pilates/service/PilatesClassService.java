@@ -17,7 +17,7 @@ public class PilatesClassService {
         this.pilatesClassRepository = classRepository;
     }
 
-   public PilatesClass saveClass(String instructor, LocalDateTime startTime, int capacity) {
+   public PilatesClass saveClass(String instructor, LocalDateTime startTime, int capacity, String name) {
         if (capacity < 1) throw new IllegalArgumentException("enter a capacity greater than 0");
 
        Optional<PilatesClass> existingClass = pilatesClassRepository.findByStartTime(startTime);
@@ -26,6 +26,7 @@ public class PilatesClassService {
        }
 
         PilatesClass newClass = new PilatesClass();
+       newClass.setName(name);
         newClass.setInstructor(instructor);
         newClass.setStartTime(startTime);
         newClass.setCapacity(capacity);
