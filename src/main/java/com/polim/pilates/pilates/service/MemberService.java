@@ -4,6 +4,7 @@ import com.polim.pilates.pilates.repository.MemberRepository;
 import org.springframework.stereotype.Service;
 import com.polim.pilates.pilates.entity.Member;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -33,5 +34,9 @@ public class MemberService {
         }
 
         memberRepository.delete(existingMember.get());
+    }
+
+    public List<Member> viewAll() {
+        return memberRepository.findAll();
     }
 }
