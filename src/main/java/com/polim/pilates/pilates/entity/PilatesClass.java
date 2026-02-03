@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -33,5 +34,5 @@ public class PilatesClass {
     private Integer capacity;
 
     @ManyToMany(mappedBy = "enrolledClasses")
-    List<Member> enrolledMembers;
+    private List<Member> enrolledMembers = new ArrayList<>();
 }

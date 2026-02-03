@@ -3,6 +3,7 @@ package com.polim.pilates.pilates.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -32,6 +33,6 @@ public class Member {
 
     @ManyToMany
     @JoinTable
-    private List<PilatesClass> enrolledClasses;
+    private List<PilatesClass> enrolledClasses = new ArrayList<>();
 
 }
