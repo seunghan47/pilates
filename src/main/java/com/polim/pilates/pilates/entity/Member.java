@@ -3,6 +3,7 @@ package com.polim.pilates.pilates.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "members")
@@ -28,5 +29,9 @@ public class Member {
     private String phoneNumber;
 
     private LocalDate joinDate;
+
+    @ManyToMany
+    @JoinTable
+    private List<PilatesClass> enrolledClasses;
 
 }

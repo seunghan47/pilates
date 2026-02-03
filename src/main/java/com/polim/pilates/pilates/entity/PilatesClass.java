@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -31,4 +32,6 @@ public class PilatesClass {
 
     private Integer capacity;
 
+    @ManyToMany(mappedBy = "enrolledClasses")
+    List<Member> enrolledMembers;
 }
