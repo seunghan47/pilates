@@ -32,7 +32,11 @@ public class Member {
     private LocalDate joinDate;
 
     @ManyToMany
-    @JoinTable
+    @JoinTable(
+        name = "enrollments",
+        joinColumns = @JoinColumn(name = "member_id"), //
+        inverseJoinColumns = @JoinColumn(name = "class_id")
+    )
     private List<PilatesClass> enrolledClasses = new ArrayList<>();
 
 }
