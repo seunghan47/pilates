@@ -16,6 +16,12 @@ public class MemberController {
         this.memberService = memberService;
     }
 
+    @PostMapping("/{memberId}/enroll/{classId}")
+    public Member enrollMember(@PathVariable Long memberId, @PathVariable Long classId) {
+
+        return memberService.enrollMemberInClass(memberId, classId);
+    }
+
     @PostMapping("/register")
     public Member createMember(@RequestBody Member member) {
 
