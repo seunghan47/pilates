@@ -34,7 +34,7 @@ public class Member {
     @ManyToMany
     @JoinTable(
         name = "enrollments",
-        joinColumns = @JoinColumn(name = "member_id"), //
+        joinColumns = @JoinColumn(name = "member_id"),
         inverseJoinColumns = @JoinColumn(name = "class_id")
     )
     private List<PilatesClass> enrolledClasses = new ArrayList<>();
