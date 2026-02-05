@@ -2,6 +2,7 @@ package com.polim.pilates.pilates.controller;
 
 import com.polim.pilates.pilates.entity.Member;
 import com.polim.pilates.pilates.service.MemberService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,7 +24,7 @@ public class MemberController {
     }
 
     @PostMapping("/register")
-    public Member createMember(@RequestBody Member member) {
+    public Member createMember(@Valid @RequestBody Member member) {
 
         return memberService.registerMember(member);
     }

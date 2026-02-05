@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -33,4 +34,16 @@ public class PilatesClassService {
 
        return pilatesClassRepository.save(newClass);
    }
+
+    public List<PilatesClass> getClassesByTeacher(String instructor) {
+        return pilatesClassRepository.findByInstructor(instructor);
+    }
+
+    public List<PilatesClass> getAvailableClasses() {
+        List<PilatesClass> allClasses = pilatesClassRepository.findAll();
+
+        return allClasses.stream()
+                .filter(c -> c.getEnrolledMembers().size() < c.getCapacity())
+                .toList();
+    }
 }

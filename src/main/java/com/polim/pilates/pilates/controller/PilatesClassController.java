@@ -10,10 +10,10 @@ import java.util.List;
 @RequestMapping("/class")
 public class PilatesClassController {
 
-    private final PilatesClassService classService;
+    private final PilatesClassService pilatesClassService;
 
     public PilatesClassController(PilatesClassService classService) {
-        this.classService = classService;
+        this.pilatesClassService = classService;
     }
 
     @GetMapping("/get")
@@ -24,10 +24,15 @@ public class PilatesClassController {
     ////yyyy-MM-dd'T'HH:mm:ss.sss
     @PostMapping("/register")
     public PilatesClass registerClass(@RequestBody PilatesClass pilatesClass) {
-            return classService.saveClass(
+            return pilatesClassService.saveClass(
                     pilatesClass.getInstructor(),
                     pilatesClass.getStartTime(),
                     pilatesClass.getCapacity(),
                     pilatesClass.getName());
+    }
+
+    @GetMapping("/search")
+    public List<PilatesClass> searchByInstructor(@RequestParam String instructor) {
+        return pilatesClassService.getClassesByTeacher(instructor);
     }
 }
