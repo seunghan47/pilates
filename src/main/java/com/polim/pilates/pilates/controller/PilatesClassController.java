@@ -35,4 +35,9 @@ public class PilatesClassController {
     public List<PilatesClass> searchByInstructor(@RequestParam String instructor) {
         return pilatesClassService.getClassesByTeacher(instructor);
     }
+
+    @GetMapping("/available")
+    public List<PilatesClass> getAvailable() {
+        return pilatesClassService.getAvailableClasses();
+    }
 }
