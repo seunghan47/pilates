@@ -1,5 +1,6 @@
 package com.polim.pilates.pilates.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.Min;
@@ -43,5 +44,6 @@ public class PilatesClass {
     private Integer capacity;
 
     @ManyToMany(mappedBy = "enrolledClasses")
+    @JsonIgnoreProperties("enrolledClasses")
     private List<Member> enrolledMembers = new ArrayList<>();
 }
