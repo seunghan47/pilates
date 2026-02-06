@@ -39,5 +39,6 @@ public class PilatesClassController {
     @GetMapping("/available")
     public List<PilatesClass> getAvailable() {
         return pilatesClassService.getAvailableClasses();
+//        return null;
     }
 }

@@ -31,7 +31,6 @@ public class PilatesClass {
     private String name; // e.g., "Advanced Reformer"
 
     @Column(nullable = false)
-
     private String instructor;
 
     //yyyy-MM-dd'T'HH:mm:ss.sss

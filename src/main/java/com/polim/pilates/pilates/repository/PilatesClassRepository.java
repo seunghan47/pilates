@@ -13,7 +13,7 @@ import java.util.Optional;
 public interface PilatesClassRepository extends JpaRepository<PilatesClass, Long> {
     Optional<PilatesClass> findByStartTime(LocalDateTime startTime);
     List<PilatesClass> findByClassNameContainingIgnoreCase(String name);
-    List<PilatesClass> findByClassDate(LocalDate date);
+    List<PilatesClass> findByStartTime(LocalDate date);
 
     List<PilatesClass> findByNameContainingIgnoreCase(String name);
     List<PilatesClass> findByInstructor(String instructor);
