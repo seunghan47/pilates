@@ -12,3 +12,10 @@
 @Lazy
 --> Only starts up beans/components when they're actually needed
 --> used to save time, data, optimization.
+
+@Bean
+--> this is like the dish. Spring instantiates an object. it's called Bean
+--> make use of 3rd party class available to spring.
+
+@Configuration
+--> this is like the recipe. it tells spring HOW to configure something
