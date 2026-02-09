@@ -3,6 +3,8 @@ package com.polim.pilates.pilates.controller;
 import com.polim.pilates.pilates.entity.Member;
 import com.polim.pilates.pilates.service.MemberService;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,9 +26,9 @@ public class MemberController {
     }
 
     @PostMapping("/register")
-    public Member createMember(@Valid @RequestBody Member member) {
-
-        return memberService.registerMember(member);
+    public ResponseEntity<Member> createMember(@Valid @RequestBody Member member) {
+        Member savedMember = memberService.registerMember(member);
+        return new ResponseEntity<>(savedMember,HttpStatus.CREATED);
     }
 
     @GetMapping("/get")
